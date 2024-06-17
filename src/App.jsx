@@ -18,7 +18,7 @@ const App = () => {
     <div>
       <TasksForm setTasks={setTasks} />
       {tasks?.map((task, i) => (
-        <Task key={i} task={task} />
+        <Task key={i} setTasks={setTasks} tasks={tasks} index={i} />
       ))}
     </div>
   );
