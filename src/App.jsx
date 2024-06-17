@@ -1,16 +1,22 @@
 import * as React from "react";
 import TasksForm from "./components/TasksForm";
 import Task from "./components/Task";
+import { setToLocal } from "./helpers/setLocalstorage";
+import { getLocal } from "./helpers/getLocalStorage";
 
 const App = () => {
-  const [tasks, setTasks] = React.useState([
-    { name: "inital tast 1", done: false },
-    { name: "inital tast 2", done: false },
-    { name: "inital tast 3", done: false },
-  ]);
+
+  const initialStorage = JSON.parse(getLocal("tasks"));
+
+  const [tasks, setTasks] = React.useState(initialStorage);
+
+  React.useEffect(() => {
+    setToLocal("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+  
   return (
     <div>
-      <TasksForm setTasks={setTasks}/>
+      <TasksForm setTasks={setTasks} />
       {tasks?.map((task, i) => (
         <Task key={i} task={task} />
       ))}

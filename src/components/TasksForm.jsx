@@ -10,7 +10,7 @@ const TasksForm = ({ setTasks }) => {
   const formHandle = (ev) => {
     ev.preventDefault();
     const input = ev.target[0];
-    setTasks((prevS) => [...prevS, { name: input.value, done: false }]);
+    setTasks((prevS) => [...prevS || '', { name: input.value, done: false }]);
     setValue("");
   };
 
