@@ -3,6 +3,13 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --bg: #fff6f6;
+  --mainBlue: #61f2f5;
+  --mainBlack: #0f0f0f;
+  --mainGrey: #ccc;
+
+  background: var(--bg);
+  color: var(--mainBlack);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,7 +19,7 @@
   box-sizing: border-box;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
 }
