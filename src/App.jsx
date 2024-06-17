@@ -10,7 +10,7 @@ const App = () => {
   ]);
   return (
     <div>
-      <TasksForm />
+      <TasksForm setTasks={setTasks}/>
       {tasks?.map((task, i) => (
         <Task key={i} task={task} />
       ))}
