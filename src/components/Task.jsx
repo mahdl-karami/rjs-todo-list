@@ -1,4 +1,5 @@
 import * as React from "react";
+import Modal from "./Modal";
 
 const Task = ({ setTasks, tasks, index }) => {
   const task = tasks[index];
@@ -29,7 +30,7 @@ const Task = ({ setTasks, tasks, index }) => {
     ev.preventDefault();
     newTasks[index].name = taskName;
     setTasks(newTasks);
-    setIsOpen(false)
+    setIsOpen(false);
   };
 
   return (
@@ -37,12 +38,7 @@ const Task = ({ setTasks, tasks, index }) => {
       <input type="checkbox" checked={initialDone} onChange={checkHandle} /> {task.name}
       <button onClick={(ev) => deleteTask(ev)}>X</button>
       <button onClick={editTask}>{isOpen ? "X" : "edit"}</button>
-      {isOpen && (
-        <form onSubmit={(ev) => editSubmit(ev)}>
-          <input value={taskName} onChange={({ target }) => setTaskName(target.value)} />
-          <button type="submit">submit</button>
-        </form>
-      )}
+      {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );
 };
