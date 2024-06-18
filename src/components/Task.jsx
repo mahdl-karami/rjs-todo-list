@@ -27,10 +27,11 @@ const Task = ({ setTasks, tasks, index }) => {
   };
 
   return (
-    <div>
-      <input type="checkbox" checked={initialDone} onChange={checkHandle} /> {task.name}
-      <button onClick={(ev) => deleteTask(ev)}>X</button>
-      <button onClick={() => setIsOpen((prevS) => !prevS)}>{isOpen ? "X" : "edit"}</button>
+    <div className="task">
+      <input className="task-checkbox" type="checkbox" checked={initialDone} onChange={checkHandle} />
+      <p className="task-name">{task.name}</p>
+      <button className="delete-button" onClick={(ev) => deleteTask(ev)}>X</button>
+      <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>{isOpen ? "X" : "edit"}</button>
       {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );

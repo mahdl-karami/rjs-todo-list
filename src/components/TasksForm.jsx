@@ -20,10 +20,10 @@ const TasksForm = ({ setTasks }) => {
   };
 
   return (
-    <>
+    <div className="add-task">
       <button onClick={() => setIsOpen(true)}>add new task</button>
       {isOpen && <Modal value={value} formHandle={formHandle} changeHandle={changeHandle} />}
-    </>
+    </div>
   );
 };
 
