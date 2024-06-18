@@ -1,31 +1,24 @@
 import * as React from "react";
+//* import components
 import Modal from "./Modal";
 
 const Task = ({ setTasks, tasks, index }) => {
+  //* task components constants
   const task = tasks[index];
-  const initialDone = Boolean(tasks[index].done);
+  const initialDone = Boolean(task.done);
   const newTasks = [...tasks];
-
+  //* task components states (useState hook)
   const [taskName, setTaskName] = React.useState(task.name);
   const [isOpen, setIsOpen] = React.useState(false);
-
+  //* task component functions
   const checkHandle = () => {
-    newTasks[index].done = !tasks[index].done;
+    newTasks[index].done = !task.done;
     setTasks(newTasks);
   };
-
   const deleteTask = () => {
-    if (index > -1) {
-      // only splice array when item is found
-      newTasks.splice(index, 1); // 2nd parameter means remove one item only
-    }
+    newTasks.splice(index, 1);
     setTasks(newTasks);
   };
-
-  const editTask = () => {
-    setIsOpen((prevS) => !prevS);
-  };
-
   const editSubmit = (ev) => {
     ev.preventDefault();
     newTasks[index].name = taskName;
@@ -37,7 +30,7 @@ const Task = ({ setTasks, tasks, index }) => {
     <div>
       <input type="checkbox" checked={initialDone} onChange={checkHandle} /> {task.name}
       <button onClick={(ev) => deleteTask(ev)}>X</button>
-      <button onClick={editTask}>{isOpen ? "X" : "edit"}</button>
+      <button onClick={() => setIsOpen((prevS) => !prevS)}>{isOpen ? "X" : "edit"}</button>
       {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );
