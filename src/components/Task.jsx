@@ -1,6 +1,9 @@
 import * as React from "react";
 //* import components
 import Modal from "./Modal";
+//* import react icons
+import { MdModeEdit, MdDelete } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
 
 const Task = ({ setTasks, tasks, index }) => {
   //* task components constants
@@ -30,8 +33,12 @@ const Task = ({ setTasks, tasks, index }) => {
     <div className="task">
       <input className="task-checkbox" type="checkbox" checked={initialDone} onChange={checkHandle} />
       <p className="task-name">{task.name}</p>
-      <button className="delete-button" onClick={(ev) => deleteTask(ev)}>X</button>
-      <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>{isOpen ? "X" : "edit"}</button>
+      <button className="delete-button" onClick={(ev) => deleteTask(ev)}>
+        <MdDelete />
+      </button>
+      <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>
+        {isOpen ? <IoMdClose /> : <MdModeEdit />}
+      </button>
       {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );
