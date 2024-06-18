@@ -1,14 +1,15 @@
 import * as React from "react";
+//* import components
 import Modal from "./Modal";
 
 const TasksForm = ({ setTasks }) => {
+  //* tasksForm states (useState hook)
   const [value, setValue] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
-
+  //* tasksForm functions
   const changeHandle = (ev) => {
     setValue(ev.target.value);
   };
-
   const formHandle = (ev) => {
     ev.preventDefault();
     if (!value) return;
@@ -20,7 +21,7 @@ const TasksForm = ({ setTasks }) => {
 
   return (
     <>
-      <button onClick={() => setIsOpen((prevS) => !prevS)}>add new task</button>
+      <button onClick={() => setIsOpen(true)}>add new task</button>
       {isOpen && <Modal value={value} formHandle={formHandle} changeHandle={changeHandle} />}
     </>
   );

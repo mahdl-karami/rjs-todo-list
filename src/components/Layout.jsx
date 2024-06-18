@@ -1,4 +1,4 @@
-export const Layout = (props) => {
+const Layout = (props) => {
   return (
     <>
       <header>
@@ -11,3 +11,5 @@ export const Layout = (props) => {
     </>
   );
 };
+
+export default Layout
