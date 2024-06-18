@@ -1,3 +1,6 @@
+//* import react icons
+import { FaGithub } from "react-icons/fa";
+
 const Layout = (props) => {
   return (
     <>
@@ -6,10 +9,16 @@ const Layout = (props) => {
       </header>
       {props.children}
       <footer>
-        <p className="footerText">developed by <a href="#">Mahdl-Karami</a> | ❤️</p>
+        <p className="footerText">
+          developed by{" "}
+          <a target="_blank" href="https://github.com/mahdl-karami">
+            Mahdl-Karami
+          </a>{" "}
+          <FaGithub />
+        </p>
       </footer>
     </>
   );
 };
 
-export default Layout
+export default Layout;
