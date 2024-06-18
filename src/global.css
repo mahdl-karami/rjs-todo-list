@@ -101,17 +101,17 @@ footer {
     text-decoration: line-through 5px red;
   }
 }
-.task-buttons{
+.task-buttons {
   display: flex;
   justify-content: center;
-  cursor: pointer;
-  svg{
+  svg {
     font-size: 2em;
+    cursor: pointer;
   }
 }
-.delete-button{
+.delete-button {
   color: red;
 }
-.edit-button{
-  color: orange
+.edit-button {
+  color: orange;
 }
