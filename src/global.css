@@ -6,7 +6,7 @@
   --bg: #fff6f6;
   --mainBlue: #3c8ce7;
   --mainBlack: #0f0f0f;
-  --mainGrey: #ccc;
+  --mainGrey: #cccccc42;
   --mainWhite: #fff;
 
   background: var(--bg);
@@ -44,7 +44,6 @@ a {
 button {
   border: none;
   background: transparent;
-  padding: 0.4rem;
   border-radius: 5px;
 }
 
@@ -75,4 +74,44 @@ footer {
     padding: 0.5rem 1rem;
     text-transform: capitalize;
   }
+}
+
+/** task */
+.task {
+  display: flex;
+  padding: 0.5rem 0.2rem;
+  background: var(--mainGrey);
+  border-radius: 5px;
+  margin-top: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.task-left {
+  display: flex;
+  input {
+    margin: auto 0.3rem;
+    width: 1.5em;
+    height: 1.5em;
+    accent-color: var(--mainBlue);
+    cursor: pointer;
+  }
+  .checked {
+    text-decoration: line-through 5px red;
+  }
+}
+.task-buttons{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  svg{
+    font-size: 2em;
+  }
+}
+.delete-button{
+  color: red;
+}
+.edit-button{
+  color: orange
 }

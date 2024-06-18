@@ -31,14 +31,18 @@ const Task = ({ setTasks, tasks, index }) => {
 
   return (
     <div className="task">
-      <input className="task-checkbox" type="checkbox" checked={initialDone} onChange={checkHandle} />
-      <p className="task-name">{task.name}</p>
-      <button className="delete-button" onClick={(ev) => deleteTask(ev)}>
-        <MdDelete />
-      </button>
-      <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>
-        {isOpen ? <IoMdClose /> : <MdModeEdit />}
-      </button>
+      <div className="task-left">
+        <input className="task-checkbox" type="checkbox" checked={initialDone} onChange={checkHandle} />
+        <p className={`task-name ${task.done ? "checked" : ""}`}>{task.name}</p>
+      </div>
+      <div className="task-buttons">
+        <button className="delete-button" onClick={(ev) => deleteTask(ev)}>
+          <MdDelete />
+        </button>
+        <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>
+          {isOpen ? <IoMdClose /> : <MdModeEdit />}
+        </button>
+      </div>
       {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );
