@@ -44,6 +44,7 @@ button {
   border: none;
   background: transparent;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 body {
@@ -66,14 +67,12 @@ footer {
 
 /** Tasksform */
 .add-task {
-  button {
     background: var(--mainBlue);
     color: var(--mainWhite);
     font-size: 1.2em;
     padding: 0.5rem 1rem;
     text-transform: capitalize;
   }
-}
 
 /** task */
 .task {
@@ -136,7 +135,17 @@ footer {
 
   h3 {
     text-transform: capitalize;
-    margin: 0.2rem 0 1rem;
+  }
+}
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.2rem 0 1rem;
+  svg {
+    font-size: 2em;
+    cursor: pointer;
+    color: red;
   }
 }
 .modal-form {
@@ -145,14 +154,15 @@ footer {
     display: block;
     padding: 0.5rem 1.2rem 0.5rem 0.4rem;
     font-size: 1em;
-    &::placeholder{
+    &::placeholder {
       text-transform: capitalize;
     }
   }
   button {
     background: var(--mainBlue);
-    padding: .6rem 1.2rem;
-    margin: .4rem 0;
+    padding: 0.6rem 1.2rem;
+    margin: 0.4rem 0;
     color: var(--mainWhite);
+    font-size: 1em;
   }
 }

@@ -3,7 +3,6 @@ import * as React from "react";
 import Modal from "./Modal";
 //* import react icons
 import { MdModeEdit, MdDelete } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
 
 const Task = ({ setTasks, tasks, index }) => {
   //* task components constants
@@ -40,10 +39,10 @@ const Task = ({ setTasks, tasks, index }) => {
           <MdDelete />
         </button>
         <button className="edit-button" onClick={() => setIsOpen((prevS) => !prevS)}>
-          {isOpen ? <IoMdClose /> : <MdModeEdit />}
+          <MdModeEdit />
         </button>
       </div>
-      {isOpen && <Modal edit taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
+      {isOpen && <Modal edit setIsOpen={setIsOpen} taskName={taskName} setTaskName={setTaskName} editSubmit={editSubmit} />}
     </div>
   );
 };
