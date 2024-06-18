@@ -7,6 +7,7 @@
   --mainBlue: #3c8ce7;
   --mainBlack: #0f0f0f;
   --mainGrey: #ccc;
+  --mainWhite: #fff;
 
   background: var(--bg);
   color: var(--mainBlack);
@@ -30,14 +31,21 @@
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--mainBlack);
   font-weight: 700;
-  transition: all .4s linear;
-  &:hover{
+  transition: all 0.4s linear;
+  &:hover {
     opacity: 60%;
   }
+}
+
+button {
+  border: none;
+  background: transparent;
+  padding: 0.4rem;
+  border-radius: 5px;
 }
 
 body {
@@ -53,7 +61,18 @@ header {
   color: var(--mainBlue);
   text-align: center;
 }
-footer{
-  padding: 5em .3rem 0;
+footer {
+  padding: 5em 0.3rem 0;
   text-transform: capitalize;
+}
+
+/** Tasksform */
+.add-task {
+  button {
+    background: var(--mainBlue);
+    color: var(--mainWhite);
+    font-size: 1.2em;
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+  }
 }
