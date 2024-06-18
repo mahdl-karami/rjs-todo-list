@@ -16,8 +16,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  box-sizing: border-box;
 }
 
 /** install fonts */
@@ -29,6 +27,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -114,4 +113,46 @@ footer {
 }
 .edit-button {
   color: orange;
+}
+
+/** modal */
+.modal-box {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000082;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: var(--mainWhite);
+  border-radius: 10px;
+  padding: 1rem;
+
+  h3 {
+    text-transform: capitalize;
+    margin: 0.2rem 0 1rem;
+  }
+}
+.modal-form {
+  input {
+    width: 100%;
+    display: block;
+    padding: 0.5rem 1.2rem 0.5rem 0.4rem;
+    font-size: 1em;
+    &::placeholder{
+      text-transform: capitalize;
+    }
+  }
+  button {
+    background: var(--mainBlue);
+    padding: .6rem 1.2rem;
+    margin: .4rem 0;
+    color: var(--mainWhite);
+  }
 }

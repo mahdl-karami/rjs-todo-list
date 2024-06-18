@@ -17,12 +17,14 @@ const Modal = (props) => {
   };
 
   return (
-    <div className="modal">
-      <h3 className="modal-title">{edit ? "edit task" : "create new task"}</h3>
-      <form className="modal-form" onSubmit={(ev) => submitHandle(ev)}>
-        <input  type="text" value={edit ? taskName : value} onChange={(ev) => changeHandle2(ev)} placeholder="enter task name" />
-        <button type="submit">{edit ? "Edit" : "Add"}</button>
-      </form>
+    <div className="modal-box">
+      <div className="modal">
+        <h3 className="modal-title">{edit ? "edit task" : "create new task"}</h3>
+        <form className="modal-form" onSubmit={(ev) => submitHandle(ev)}>
+          <input required type="text" value={edit ? taskName : value} onChange={(ev) => changeHandle2(ev)} placeholder="enter task name" />
+          <button type="submit">{edit ? "Edit" : "Add"}</button>
+        </form>
+      </div>
     </div>
   );
 };
