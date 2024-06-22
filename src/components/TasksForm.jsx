@@ -20,7 +20,7 @@ const TasksForm = ({ setTasks }) => {
   };
 
   return (
-    <div>
+    <div className="test">
       <button className="add-task" onClick={() => setIsOpen(true)}>
         add new task
       </button>
