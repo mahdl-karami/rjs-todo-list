@@ -49,7 +49,8 @@ button {
 
 body {
   width: clamp(400px, 70%, 1200px);
-  margin: 1rem auto;
+  min-height: 100vh;
+  margin: auto;
 }
 
 /** Layout */
@@ -61,6 +62,8 @@ header {
   text-align: center;
 }
 footer {
+  position: fixed;
+  bottom: 0;
   padding: 5em 0.3rem 0;
   text-transform: capitalize;
 }
