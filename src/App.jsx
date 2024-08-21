@@ -21,9 +21,15 @@ const App = () => {
     <Layout>
       <TasksForm setTasks={setTasks} />
       <div className="taskTable">
-        {tasks?.map((task, i) => (
-          <Task key={i} setTasks={setTasks} tasks={tasks} index={i} />
-        ))}
+        {tasks.length ? (
+          <>
+            {tasks?.map((task, i) => (
+              <Task key={i} setTasks={setTasks} tasks={tasks} index={i} />
+            ))}
+          </>
+        ) : (
+          <h2>Nothing here, add new task ...</h2>
+        )}
       </div>
     </Layout>
   );
