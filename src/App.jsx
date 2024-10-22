@@ -21,7 +21,7 @@ const App = () => {
     <Layout>
       <TasksForm setTasks={setTasks} />
       <div className="taskTable">
-        {tasks.length ? (
+        {tasks?.length ? (
           <>
             {tasks?.map((task, i) => (
               <Task key={i} setTasks={setTasks} tasks={tasks} index={i} />
