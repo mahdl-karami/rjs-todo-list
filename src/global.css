@@ -218,3 +218,11 @@ footer {
     }
   }
 }
+
+/* empty tasks */
+
+.empty {
+  background: #f2ebeb;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+}

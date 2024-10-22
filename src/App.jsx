@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 //* import external functions
 import { setToLocal } from "./helpers/setLocalstorage";
 import { getLocal } from "./helpers/getLocalStorage";
+import EmptyTasks from "./components/EmptyTasks";
 
 const App = () => {
   //? get initial data from local storage
@@ -28,7 +29,7 @@ const App = () => {
             ))}
           </>
         ) : (
-          <h2>Nothing here, add new task ...</h2>
+          <EmptyTasks />
         )}
       </div>
     </Layout>
